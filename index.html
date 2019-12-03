@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Hangman</title>
+	<link rel="stylesheet" type="text/css" href="styles/main.css">
+	<link rel="stylesheet" type="text/css" href="styles/animate.css">
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+</head>
+<body>
+	<div class="Header">
+			<h1 id="Header">Hangman</h1>
+			<div class="col-sm" id="Timer">
+					<p>Timer:</p>
+			</div>
+			<div class="col-sm">
+					<button id="Refresh">Refresh</button>
+			</div>
+	</div>
+	<!-- <div class="container">
+		<div class="row">
+				<div id="Timer">
+						<p>Timer:</p>
+				</div>
+				<div><button id="Refresh">Refresh</button></div>
+		</div>
+	</div> -->
+
+		<div>
+			<h2 id="pCategory">Pick A Category!</h2>
+		</div>
+
+		<!-- <div class="categories">
+				<button id="cars">Cars</button>
+				<button id="trucks">Trucks</button>
+				<button id="SUVs">SUVs</button>
+		</div> -->
+
+		<div class="container">
+			<div class="row">
+				  <div class="categories col-sm">
+					<button id="cars">Cars</button>
+				  </div>
+				  <div class="categories col-sm">
+					<button id="trucks">Trucks</button>
+				  </div>
+				  <div class="categories col-sm">
+					<button id="SUVs">SUVs</button>
+				</div>
+			</div>
+		</div>
+  
+  <!-- Modal -->
+
+<div class="modal fade" id="winModal" tabindex="-1" role="dialog" aria-labelledby="winModalLabel" aria-hidden="true">
+	<div class="modal-dialog" role="document">
+		<div class="modal-body">
+			<h5 class="modal-title" id="winModalLabel">You won!</h5>
+			  You escaped from the sheriff!<br>
+			<button id="closeBtn" type="button" class="btn" data-dismiss="modal">Close</button>
+		</div>
+	</div>
+</div>
+
+  <!-- Modal -->
+
+<div class="modal fade" id="loseModal" tabindex="-1" role="dialog" aria-labelledby="loseModalLabel" aria-hidden="true">
+		<div class="modal-dialog" role="document">
+			<div class="modal-body">
+				<h5 class="modal-title" id="loseModalLabel">You lost!</h5>
+				You were hung by the sheriff!<br>
+				<button id="closeBtn" type="button" class="btn" data-dismiss="modal">Close</button>
+			</div>
+		</div>
+</div>
+
+
+
+		<!-- <div id="lButtons"></div> -->
+		<div class="container">
+			<div class="row">
+				<div class="Letters col-sm">
+					<button id="A">A</button>
+					<button id="B">B</button>
+					<button id="C">C</button>
+					<button id="D">D</button>
+					<button id="E">E</button>
+					<button id="F">F</button>
+					<button id="G">G</button>
+					<button id="H">H</button>
+					<button id="I">I</button>
+					<button id="J">J</button>
+					<button id="K">K</button>
+					<button id="L">L</button>
+					<button id="M">M</button><br>
+					<button id="N">N</button>
+					<button id="O">O</button>
+					<button id="P">P</button>
+					<button id="Q">Q</button>
+					<button id="R">R</button>
+					<button id="S">S</button>
+					<button id="T">T</button>
+					<button id="U">U</button>
+					<button id="V">V</button>
+					<button id="W">W</button>
+					<button id="X">X</button>
+					<button id="Y">Y</button>
+					<button id="Z">Z</button>
+				</div>
+			</div>
+		</div>
+		
+		<div id="word"></div>
+		
+		
+
+		<div id="pics">
+			<?xml version="1.0" encoding="utf-8"?>
+			<!-- Generator: Adobe Illustrator 22.0.1, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
+			<svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+				viewBox="0 0 80 100" style="enable-background:new 0 0 80 100;" xml:space="preserve">
+			<style type="text/css">
+				.st0{fill:none;stroke:#ffffff;stroke-miterlimit:10;}
+			</style>
+			<circle id="Hhead" class="st0" cx="40" cy="26" r="12.5"/>
+			<line id="Hbody" class="st0" x1="39.5" y1="38.5" x2="39.5" y2="75.5"/>
+			<line id="Hleftarm" class="st0" x1="24.5" y1="41.5" x2="39.5" y2="52.5"/>
+			<line id="Hrightarm" class="st0" x1="39.5" y1="52.5" x2="55.5" y2="42.5"/>
+			<line id="Hleftleg" class="st0" x1="39.5" y1="74.5" x2="26.5" y2="85.5"/>
+			<line id="Hrightleg" class="st0" x1="39.5" y1="74.5" x2="52.5" y2="86.5"/>
+			<line id="Hbottombase" class="st0" x1="19.5" y1="90.5" x2="70.5" y2="90.5"/>
+			<line id="Hrightbase" class="st0" x1="68.5" y1="90.5" x2="68.5" y2="2"/>
+			<line id="Htopbase" class="st0" x1="68.5" y1="2.5" x2="39.5" y2="2.5"/>
+			<line id="Hrope" class="st0" x1="39.5" y1="2.5" x2="39.5" y2="13.5"/>
+			</svg>
+		</div>
+
+		<div>
+			<img id="ClintEastwood" src="images/ClintEastwood.png">
+		</div>
+		<div>
+			<img id="Boot1" src="images/Boot.png">
+		</div>
+		<div>
+			<img id="Boot2" src="images/Boot.png">
+		</div>
+		
+		
+
+
+	
+<script src="scripts/main.js"></script>
+<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+</body>
+</html>
